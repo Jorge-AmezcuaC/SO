@@ -1,23 +1,46 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react'
+import { useState } from 'react';
+import Home from './virtualYreal/Home';
+
+const SwitchPage = (props) => {
+  switch (props.page) {
+    case 1:
+      return <Home/>
+    case 2:
+      return(
+        <div>Bajo Desarrollo</div>
+      )
+    case 3:
+      return(
+        <div>Bajo Desarrollo</div>
+      )
+    case 4:
+      return(
+        <div>Bajo Desarrollo</div>
+      )
+    default:
+      return(
+        <div>Seleccione una opcion para comenzar</div>
+      )
+  }
+}
 
 function App() {
+  
+  const [actualPage, setPage] = useState(0)
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="menu">
+        <button className='botones' onClick={() => setPage(1)}>Act 9 Memoria real y virtual</button>
+        <button className='botones' onClick={() => setPage(2)}>Act 10 Problema de los filosofos</button>
+        <button className='botones' onClick={() => setPage(3)}>Act 11 Concurrencias</button>
+        <button className='botones' onClick={() => setPage(4)}>Act 12 Productor Consumidor</button>
+      </div>
+      <div className="main">
+        <SwitchPage page={actualPage}/>
+      </div>
     </div>
   );
 }
