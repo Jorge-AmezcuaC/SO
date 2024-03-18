@@ -2,15 +2,14 @@ import './App.css';
 import React from 'react'
 import { useState } from 'react';
 import Home from './virtualYreal/Home';
+import Filosofos from './filosofos/Home';
 
 const SwitchPage = (props) => {
   switch (props.page) {
     case 1:
       return <Home/>
     case 2:
-      return(
-        <div>Bajo Desarrollo</div>
-      )
+      return <Filosofos/>
     case 3:
       return(
         <div>Bajo Desarrollo</div>
