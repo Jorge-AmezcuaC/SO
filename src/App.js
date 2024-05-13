@@ -3,6 +3,9 @@ import React from 'react'
 import { useState } from 'react';
 import Home from './virtualYreal/Home';
 import Filosofos from './filosofos/Home';
+import Concurrencia from './concurrencia/Home';
+import Optimizacion from './optimizacion/Home';
+import Banaquero from './banquero/Home';
 
 const SwitchPage = (props) => {
   switch (props.page) {
@@ -11,13 +14,11 @@ const SwitchPage = (props) => {
     case 2:
       return <Filosofos/>
     case 3:
-      return(
-        <div>Bajo Desarrollo</div>
-      )
+      return <Concurrencia/>
     case 4:
-      return(
-        <div>Bajo Desarrollo</div>
-      )
+      return <Optimizacion/>
+    case 5:
+      return <Banaquero/>
     default:
       return(
         <div>Seleccione una opcion para comenzar</div>
@@ -36,6 +37,7 @@ function App() {
         <button className='botones' onClick={() => setPage(2)}>Act 10 Problema de los filosofos</button>
         <button className='botones' onClick={() => setPage(3)}>Act 11 Concurrencias</button>
         <button className='botones' onClick={() => setPage(4)}>Act 12 Productor Consumidor</button>
+        <button className='botones' onClick={() => setPage(5)}>Act 13 Algoritmo del Banaquero</button>
       </div>
       <div className="main">
         <SwitchPage page={actualPage}/>
